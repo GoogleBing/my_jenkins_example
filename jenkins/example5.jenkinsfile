@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    environment {
+        def myStringEnable = "Enable"
+        def myStringDisable = "Enable"
+    }
+        
+    parameters {
+        booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
+    }
+
+
+    stages {
+        stage("Demo") {
+            steps{
+                if (params.myBoolean == true) {
+                    echo "You choose ${myStringEnable}"
+                }
+                else {
+                    echo "You choose ${myStringDisable}"
+                }
+            }
+        }
+    }
+}
