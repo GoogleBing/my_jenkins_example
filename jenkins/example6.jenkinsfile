@@ -1,19 +1,19 @@
-def myFunction(String myText) {
-    echo "myText is set to: ${myTest}"
+def mul()
+{
+   def a=2
+   def b=3
+   def mul=a*b
+   return mul
 }
-
 pipeline {
     agent any
-
-    parameters {
-        string(defaultValue: "Test", description: "Test String", name: "stringValue")
-    }
-
-
     stages {
-        stage("Demo") {
+        stage('Hello') {
             steps{
-                myFunction($(params.stringValue))
+                script{
+                  output= mul()
+                  echo "The mul is ${output}"
+            }
             }
         }
     }
