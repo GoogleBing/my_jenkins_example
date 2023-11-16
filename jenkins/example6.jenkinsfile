@@ -11,8 +11,11 @@ pipeline {
 
     stages {
         stage("Get Parameter") {
-            def string_copy = params.stringValue
+            steps {
+                def string_copy = params.stringValue
+            }            
         }
+        
         stage("Demo") {
             steps{
                 myFunction(string_copy)
