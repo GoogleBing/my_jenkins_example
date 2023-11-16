@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
+        string(defaultValue: "Test", description: "Test String", name: "stringValue")
+        choice(choices: ["Ferrari", "Gen3MK", "Toyota", "MBEAM"], description: "Choose Project", name: "projectName")
+    }
+
+    stages {
+        stage("Demo") {
+            steps {
+                echo "booleanParam is set to: ${params.myBoolean}"
+                echo "String is set to: ${params.stringValue}"
+                echo "Choice is set to: ${params.projectName}"
+            }
+        }
+    }
+}
