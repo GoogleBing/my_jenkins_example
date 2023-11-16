@@ -16,8 +16,7 @@ pipeline {
             steps{
                 if (params.myBoolean == true) {
                     echo "You choose ${myStringEnable}"
-                }
-                else {
+                } else {
                     echo "You choose ${myStringDisable}"
                 }
             }
