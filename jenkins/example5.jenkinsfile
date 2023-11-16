@@ -13,7 +13,7 @@ pipeline {
 
     stages {
         stage("Demo") {
-            steps{
+            steps {
                 // if (params.myBoolean == true) {
                 //     echo "You choose ${myStringEnable}"
                 // } else {
