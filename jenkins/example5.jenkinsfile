@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         def myStringEnable = "Enable"
-        def myStringDisable = "Enable"
+        def myStringDisable = "Disable"
     }
         
     parameters {
