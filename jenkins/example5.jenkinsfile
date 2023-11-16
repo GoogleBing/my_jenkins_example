@@ -14,11 +14,11 @@ pipeline {
     stages {
         stage("Demo") {
             steps{
-                if (params.myBoolean == true) {
-                    echo "You choose ${myStringEnable}"
-                } else {
-                    echo "You choose ${myStringDisable}"
-                }
+                // if (params.myBoolean == true) {
+                //     echo "You choose ${myStringEnable}"
+                // } else {
+                //     echo "You choose ${myStringDisable}"
+                //}
             }
         }
     }
