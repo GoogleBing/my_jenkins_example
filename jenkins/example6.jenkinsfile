@@ -1,3 +1,7 @@
+def myFunction(String myText) {
+    echo "myText is set to: ${myTest}"
+}
+
 pipeline {
     agent any
 
@@ -9,12 +13,8 @@ pipeline {
     stages {
         stage("Demo") {
             steps{
-                myFunction(params.stringValue)
+                myFunction($(params.stringValue))
             }
         }
     }
-}
-
-def myFunction(String myText) {
-    echo "myText is set to: ${myTest}"
 }
