@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(defaultValue: "Test", description: "Test String", name: "stringValue")
+    }
+
+
+    stages {
+        stage("Demo") {
+            steps{
+                myFunction(params.stringValue)
+            }
+        }
+    }
+}
+
+def myFunction(String myText) {
+    echo "myText is set to: ${myTest}"
+}
