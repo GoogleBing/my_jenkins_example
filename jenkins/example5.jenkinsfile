@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         def myStringEnable = "Enable"
-        def myStringDisable = "Disable"
+        def myStringDisable = "Enable"
     }
         
     parameters {
@@ -14,10 +14,12 @@ pipeline {
     stages {
         stage("Demo") {
             steps {
-                if (params.myBoolean == true) {
-                    echo "You choose ${myStringEnable}"
-                } else {
-                    echo "You choose ${myStringDisable}"
+                script {
+                    if(params.myBoolean == true) {
+                        echo "You choose ${myStringEnable}"
+                    } else {
+                        echo "You choose ${myStringDisable}"
+                    }
                 }
             }
         }
